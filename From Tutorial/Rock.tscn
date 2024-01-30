@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://df2k2xt25rgra"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ho05t"]
+albedo_color = Color(0.12549, 0, 0, 1)
+
+[node name="CSGBox3D" type="CSGBox3D"]
+transform = Transform3D(0.44512, 0.66186, 0.603166, -0.829798, 0.558064, 0, -0.336605, -0.500506, 0.797616, 0, 0, 0)
+material = SubResource("StandardMaterial3D_ho05t")

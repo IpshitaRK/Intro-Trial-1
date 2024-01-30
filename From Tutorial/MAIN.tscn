@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://o37htsm58p8p"]
+
+[ext_resource type="PackedScene" uid="uid://bec08gp6l02wg" path="res://tree.tscn" id="1_nwqhx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0vyji"]
+sky_top_color = Color(0.533333, 0.368627, 0.643137, 1)
+sky_horizon_color = Color(0.647059, 0.643137, 0.701961, 1)
+ground_bottom_color = Color(0.054902, 0.203922, 0.164706, 1)
+ground_horizon_color = Color(0.647059, 0.643137, 0.701961, 1)
+
+[sub_resource type="Sky" id="Sky_u7hy5"]
+sky_material = SubResource("ProceduralSkyMaterial_0vyji")
+
+[sub_resource type="Environment" id="Environment_q6foo"]
+background_mode = 2
+sky = SubResource("Sky_u7hy5")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="forest" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(0.890196, 1, 1, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q6foo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.992554, -0.0463385, 0.112644, 0.0463133, 0.998923, 0.00284125, -0.112654, 0.00239681, 0.993631, 0, 0.154984, 9.55501)
+cull_mask = 1048447
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3357, -0.8311, 0)
+size = Vector3(61.3286, 0.5, 100)
+
+[node name="Tree" parent="." instance=ExtResource("1_nwqhx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.661372, 0)
+
+[node name="Tree2" parent="." instance=ExtResource("1_nwqhx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.23995, 6.93009)
+
+[node name="Tree3" parent="." instance=ExtResource("1_nwqhx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.98412, -5.02886)
